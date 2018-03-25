@@ -24,3 +24,7 @@ You can specify to the middleware how far you want to go by specifying the numbe
     application = ProfileLogMiddleware(get_wsgi_application(), limit=5)
 
 The default value for `limit` is 25, which should suffice for most usecases.
+
+## Caveats
+
+If you have a compression middleware in place (for example, a gzip middleware), make sure to disable it or run it after `ProfileLogMiddleware`, otherwise the default profile logging function won't be able to identify the content.
