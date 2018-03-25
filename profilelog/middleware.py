@@ -30,6 +30,13 @@ except ImportError:
 from pstats import Stats
 
 
+def _bytes(content):
+    try:
+        return bytes(content,  'utf-8')
+    except TypeError:
+        return bytes(content)
+
+
 def html_writer(env, original, profile):
     """Rewrite HTML responses to include profiling info.
 
@@ -48,7 +55,7 @@ console.groupEnd();
 """.format(env.get('REQUEST_METHOD'), env.get('PATH_INFO'), json.dumps(profile))
 
     response = original[:idx]
-    response += bytes(profile_output, 'utf-8')
+    response += _bytes(profile_output)
     response += original[idx:]
 
     return response
