@@ -12,12 +12,8 @@ This is a WSGI middleware which will profile the request and embed it in the res
 
 Simply wrap your WSGI application with `profilelog.middleware.ProfileLogMiddleware`. Below is an example for the `wsgi.py` file provided with Django projects:
 
-    import os
-
     from django.core.wsgi import get_wsgi_application
     from profilelog.middleware import ProfileLogMiddleware
-
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "project.settings")
 
     application = ProfileLogMiddleware(get_wsgi_application())
 
