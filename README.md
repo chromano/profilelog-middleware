@@ -6,7 +6,7 @@ This is a WSGI middleware which will profile the request and embed it in the res
 
 ## Installation
 
-    pip install -e git+https://github.com/chromano/profilelog-middleware.git#egg=profilelog-middleware
+    pip install profilelog-middleware
     
 ## Usage
 
