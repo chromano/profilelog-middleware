@@ -12,13 +12,14 @@ with open('profilelog/__init__.py', 'rb') as f:
         f.read().decode('utf-8')).group(1)))
 
 setup(
-    name='profilelog',
+    name='profilelog-middleware',
     version=__version__,
     description="""WSGI middleware for logging profiling data.
 
 Provides profiling results through console.log.""",
     long_description=open('README.md', 'r').read(),
-    maintainer="Carlos H. Romano <chromano@gmail.com>",
+    maintainer="Carlos H. Romano",
+    maintainer_email='chromano@gmail.com',
     url="https://github.com/chromano/profilelog",
     packages=find_packages(exclude=["tests"]),
 )
