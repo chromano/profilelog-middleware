@@ -40,9 +40,9 @@ def _bytes(content):
 def html_writer(env, original, profile):
     """Rewrite HTML responses to include profiling info.
 
-    If a closing <html> tag can't be found, the profiling info won't be added.
+    If a closing <body> tag can't be found, the profiling info won't be added.
     """
-    term = b'</html>'
+    term = b'</body>'
     idx = original.lower().rfind(term)
     if idx == -1:
         return
